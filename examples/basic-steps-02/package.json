@@ -1,16 +1,20 @@
 {
-  "name": "todo-app",
-  "version": "1.0.0",
-  "description": "",
+  "name": "reactjs-basic-steps-02",
+  "version": "0.0.1",
+  "description": "Webpack config files & loaders",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "start": "npm run build && npm run open",
+    "build": "node ./node_modules/webpack/bin/webpack",
+    "serve": "./node_modules/http-server/bin/http-server -p 1234",
+    "open": "./node_modules/http-server/bin/http-server -p 1234 -o"
   },
   "devDependencies": {
     "webpack": "^1.12.0",
     "css-loader": "^0.16.0",
-    "style-loader": "^0.12.3"
+    "style-loader": "^0.12.3",
+    "http-server": "^0.8.5"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Marco Pegoraro",
+  "license": "MIT"
 }

@@ -1,11 +1,17 @@
 {
-  "name": "todo-app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "reactjs-basic-steps-01",
+  "version": "0.0.1",
+  "description": "basic webpack usage to implement NodeJS like module system",
   "scripts": {
-    "build": "webpack src/index.js build/index.js"
+    "start": "npm run build && npm run open",
+    "build": "node ./node_modules/webpack/bin/webpack src/index.js build/index.js",
+    "serve": "./node_modules/http-server/bin/http-server -p 1234",
+    "open": "./node_modules/http-server/bin/http-server -p 1234 -o"
   },
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {
+    "webpack": "^1.12.0",
+    "http-server": "^0.8.5"
+  },
+  "author": "Marco Pegoraro",
+  "license": "MIT"
 }
