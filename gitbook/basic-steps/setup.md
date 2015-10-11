@@ -10,16 +10,14 @@ If you are using a different system somw of those tools may not work properly (o
 
 ## Homebrew
 
-_Homebrew_ is a **package manager** build in _Ruby_ which is shipped with your _Mac_. This tool will make very easy to install other software.
+[_Homebrew_](http://brew.sh/) is a **package manager** build in _Ruby_ which is shipped with your _Mac_. This tool will make very easy to install other software.
 
 ## Nodeenv
 
-_Nodeenv_ is a NodeJS version manager. It makes very easy to run multiple versions of NodeJS on your machine. This may be very useful if you have to work on lecagy code and need to run old stuff.
+[_Nodeenv_](https://github.com/OiNutter/nodenv) is a NodeJS version manager. It makes very easy to run multiple versions of NodeJS on your machine. This may be very useful if you have to work on lecagy code and need to run old stuff.
 
 ## NodeJS
 
-
-
-## Gulp
+[_NodeJS_](http://nodejs.org) is Javascript running in your _Terminal_ (or in a server environment).
 
 
