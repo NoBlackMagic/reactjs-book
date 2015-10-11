@@ -19,7 +19,7 @@ module.exports = {
             // load images as encoded urls
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
-                loader: 'url-loader'
+                loader: 'url!img?optimizationLevel=7'
             }
         ]
     }
