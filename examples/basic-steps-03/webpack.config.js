@@ -26,6 +26,18 @@ module.exports = {
             {
                 test: /\.(ogg|mp3|wav)$/i,
                 loader: 'url'
+            },
+
+            // load json configuration files
+            {
+                test: /\.(json)$/i,
+                loader: 'json'
+            },
+
+            // load XML configuration files
+            {
+                test: /\.(xml)$/i,
+                loader: 'xml'
             }
         ]
     }

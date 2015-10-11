@@ -56,4 +56,23 @@ Again you will use the `url-loader` to embed the audio file:
 In case you want to load the pure `base64` representation instead of the full url version you can use the [`base64-loader`](https://github.com/antelle/base64-loader).
 
 
-## Require JSON
+## Require Configuration Files
+
+Many apps require some kind of configuration and often those informations are stored in either JSON or XML files:
+
+	var cfg = require('./config.json');
+	console.log(cfg.appName);
+	
+This is a very common scenario, luckily you can use [`json-loader`](https://github.com/webpack/json-loader) and [`xml-loader`](https://github.com/gisikw/xml-loader) to quickly solve this need:
+
+    // load json configuration files
+    {
+        test: /\.(json)$/i,
+        loader: 'json'
+    },
+
+    // load XML configuration files
+    {
+        test: /\.(xml)$/i,
+        loader: 'xml'
+    }

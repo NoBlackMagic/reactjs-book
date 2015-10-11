@@ -23,3 +23,11 @@ img.addEventListener('click', function() {
 var p = document.createElement('p');
 p.innerHTML = '<i>(click on the image to play the sound)</i>';
 document.body.appendChild(p);
+
+// load a json configuration file
+var jsonCfg = require('./config.json');
+console.log('JSON Config', jsonCfg);
+
+// load an XML configuration file as json
+var xmlCfg = require('./config.xml');
+console.log('XML Config', xmlCfg);
