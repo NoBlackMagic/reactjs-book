@@ -1,0 +1,26 @@
+
+module.exports = {
+    entry: [
+        './src/index.js'
+    ],
+    output: {
+        path: 'build',
+        filename: 'bundle.js'
+    },
+    module: {
+        loaders: [
+
+            // load CSS files and inject CSS code into the page
+            {
+                test: /\.css$/, 
+                loader: 'style-loader!css-loader' 
+            },
+
+            // load images as encoded urls
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loader: 'url-loader'
+            }
+        ]
+    }
+};

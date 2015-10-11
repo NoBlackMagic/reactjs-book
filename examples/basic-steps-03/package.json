@@ -1,0 +1,22 @@
+{
+  "name": "reactjs-basic-steps-03",
+  "version": "0.0.1",
+  "description": "assets loaders",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && npm run open",
+    "build": "node ./node_modules/webpack/bin/webpack",
+    "serve": "./node_modules/http-server/bin/http-server -p 1234",
+    "open": "./node_modules/http-server/bin/http-server -p 1234 -o"
+  },
+  "devDependencies": {
+    "webpack": "^1.12.0",
+    "css-loader": "^0.16.0",
+    "file-loader": "^0.8.4",
+    "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6",
+    "http-server": "^0.8.5"
+  },
+  "author": "Marco Pegoraro",
+  "license": "MIT"
+}
