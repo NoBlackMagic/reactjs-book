@@ -7,3 +7,19 @@ require('./index.css');
 var img = new Image();
 img.src = require('./react.jpg');
 document.body.appendChild(img);
+
+// require an audio resource and play it at loading time
+var sound = new Audio(require('./blip.ogg'));
+sound.play();
+
+// play audio when clicking on the image
+img.addEventListener('click', function() {
+    sound.pause();
+    sound.currentTime = 0;
+    sound.play();
+});
+
+// add hints to the page
+var p = document.createElement('p');
+p.innerHTML = '<i>(click on the image to play the sound)</i>';
+document.body.appendChild(p);

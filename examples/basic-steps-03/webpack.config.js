@@ -20,6 +20,12 @@ module.exports = {
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 loader: 'url!img?optimizationLevel=7'
+            },
+
+            // load any other kind of file as url
+            {
+                test: /\.(ogg|mp3|wav)$/i,
+                loader: 'url'
             }
         ]
     }
