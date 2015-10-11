@@ -6,7 +6,7 @@ This is the summary of my book.
     * [get your computer ready](basic-steps/setup.md)
     * [get your hands on Webpack](basic-steps/webpack.md)
     * [what about CSS?](basic-steps/require-css.md)
-    * [what about images?](basic-steps/require-assets.md)
+    * [what about other assets?](basic-steps/require-assets.md)
     * [let's talk modern languages](basic-steps/babel.md)
 * [Light fast development](dev-tools/README.md)
     * [run your dev-server](dev-tools/dev-server.md)

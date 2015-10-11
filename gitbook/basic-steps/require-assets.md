@@ -1,8 +1,6 @@
-# What about Images?
+# What about other Assets?
 
-Well, the right question might be: _"what about assets?"_ 
-
-An average web application needs at least some images, not to mention sounds for games, or simple _JSON_ configuration files. _Webpack_ can handle all of them via _loaders_, the same approach we took with CSS.
+An average web application needs to load at least some images, not to mention sounds for games, or simple _JSON_ configuration files. _Webpack_ can handle all of them via _loaders_, the same approach we used with CSS.
 
 ## Require Images
 
@@ -79,3 +77,28 @@ This is a very common scenario, luckily you can use [`json-loader`](https://gith
     
 ## Require Fonts
 
+Even fonts can be packed withing your application bundle:
+
+	// load fonts
+    {
+        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?mimetype=application/font-woff'
+    },
+    {
+        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?mimetype=application/font-woff'
+    },
+    {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?mimetype=application/octet-stream'
+    },
+    {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?mimetype=application/vnd.ms-fontobject'
+    },
+    {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?mimetype=image/svg+xml'
+    }
+    
+This configuration works together with the `css-loader` so to automatically embed all the fonts you reference in your stylesheets.
