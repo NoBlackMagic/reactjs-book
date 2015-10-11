@@ -76,3 +76,6 @@ This is a very common scenario, luckily you can use [`json-loader`](https://gith
         test: /\.(xml)$/i,
         loader: 'xml'
     }
+    
+## Require Fonts
+

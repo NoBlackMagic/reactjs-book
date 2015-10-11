@@ -31,3 +31,10 @@ console.log('JSON Config', jsonCfg);
 // load an XML configuration file as json
 var xmlCfg = require('./config.xml');
 console.log('XML Config', xmlCfg);
+
+// include roboto google font
+require('./font-roboto.css');
+var p = document.createElement('p');
+p.innerHTML = 'This should have a nice font';
+p.className = 'roboto';
+document.body.appendChild(p);
