@@ -88,6 +88,7 @@ Remember those simple principles:
 * a module can export more than one method
 * a module can export every type (strings, numbers, ...)
 
+> And take a look at [the example &raquo;](./basic-steps-01)
 
 
 	

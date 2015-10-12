@@ -102,3 +102,15 @@ Even fonts can be packed withing your application bundle:
     }
     
 This configuration works together with the `css-loader` so to automatically embed all the fonts you reference in your stylesheets.
+
+## Now it's your turn!
+
+> Try to use [Twitter Bootstrap](http://getbootstrap.com/) in your application.
+
+Here are some steps you can follow:
+
+1. use the pre-compiled CSS version which you manually download
+2. use the pre-compiled CSS from [Bootstrap's NPM module](https://www.npmjs.com/package/bootstrap)
+3. try to use Gyphicons in your page and check the _Network_ tab in Chrome's _Developer Tools_ so to verify that all the fonts styles are bundled within your app
+
+> And take a look at [the example &raquo;](./basic-steps-03)

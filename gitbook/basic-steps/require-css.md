@@ -59,3 +59,14 @@ _Webpack loaders_ are the most effective way to unleash _Webpack_'s true potenti
 If you want you can write your own loader, but is not like that you need to do that for a lot of ready to use loaders exists as _NPM_ modules.
 
 [Here there is a list of existing _Webpack_ loaders &raquo;](https://webpack.github.io/docs/list-of-loaders.html)
+
+## Now it's your turn!
+
+> Try to add more CSS files to your application.
+
+Remember those principles:
+
+* you can link CSS files in any module
+* the linking order matters as rules priority
+
+> And take a look at [the example &raquo;](./basic-steps-02)
