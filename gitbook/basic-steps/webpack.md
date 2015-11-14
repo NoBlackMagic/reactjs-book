@@ -1,12 +1,13 @@
 # Get your hands on Webpack
 
 You can write a _ReactJS_ app using good ol' _ES5_ syntax and few _polyfills_.
-You can just dump files in your browser and load the page to see your _HelloWorld_ working. But this is not going to work, not in the long run.
+You can just dump files in your browser and load the page to see your _HelloWorld_ working. But this is not going to be efficient nor sustainable, not in the long run.
 
 > _ReactJS_ is a library **designed to build rich applications**, unlike
-> _jQuery_ it is not meant to enrich an existing web page with some plugins.
+> _jQuery_ it is not meant to enrich an existing web page with some plugins,
+> with _React_ 
 
-In this chapter you move beyond the normal _Javascript_ browser scripting. You are going to use [Webpack](http://webpack.github.io/) to **build your application's _bundle_** from some well structured Javascript source files. This actions is called **transpiling** and I give you some good arguments why you want do that:
+In this chapter you go beyond the normal _Javascript_ browser scripting. You are going to use [Webpack](http://webpack.github.io/) to **build your application's _bundle_** from some well structured Javascript source files. This actions is called **transpiling** and I give you some good arguments why you want do that:
 
 - each of your source files will be small therefore **extremely easy to read**
 - you can **use edge language features** that are not yet available to the browsers (like _arrow functions_ and _promises_)
