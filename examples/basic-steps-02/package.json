@@ -4,7 +4,7 @@
   "description": "Webpack config files & loaders",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && npm run open",
+    "start": "npm install && npm run build && npm run open",
     "build": "node ./node_modules/webpack/bin/webpack",
     "serve": "./node_modules/http-server/bin/http-server -p 1234",
     "open": "./node_modules/http-server/bin/http-server -p 1234 -o"

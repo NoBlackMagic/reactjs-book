@@ -8,15 +8,15 @@ but often you will find more convenient to keep your CSS sources separated from 
 > within the head of the document, while the app's bundle is usually linked 
 > in the body so to do not affect the **first page rendering time**.
 
-On the other side, **under active development**, you may find convenient to build one single `bundle` which contains everything is needed to run the app.
+On the other side, **under active development**, you may find convenient to build one single `application bundle` which contains everything is needed to run the app.
 
 With _Webpack_ you can easily enjoy the best of the two worlds:
 
-1. you'll embed all our CSS within the bundle during development so to enjoy features like hot code loading
+1. you'll embed all our CSS within the bundle during development so to enjoy features like _hot module replacement_
 2. when it's time to deploy you'll extract CSS rules in an optimized CSS bundle
 
 In order to do so we need to give some more fine grained instructions to _Webpack_.  
-Meet the classic _Webpack_'s configuration file `webpack.config.js`.
+Doing that with the classic `cli` interface is messy so meet _Webpack_'s configuration file: `webpack.config.js`.
 
 ## Webpack Config File
 
@@ -69,4 +69,4 @@ Remember those principles:
 * you can link CSS files in any module
 * the linking order matters as rules priority
 
-> And take a look at [the example &raquo;](./basic-steps-02)
+> And take a look at [the example &raquo;](./_assets/basic-steps-02.zip)

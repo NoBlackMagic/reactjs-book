@@ -1,4 +1,7 @@
 var myLib = require('./my-lib');
+
+// include the CSS project's entry point
+// (or as many CSS are needed)
 require('./index.css');
 
 var starWarsCharacters = [

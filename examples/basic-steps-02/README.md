@@ -8,12 +8,19 @@ This example shows introduces the `Webpack.config.js` file in which to define al
 > In order to run the example you need `NodeJS >= 0.12.7`
 
 	// run those from the example's folder
-	npm install && npm start
+	npm start
 	
 	
-## Optional Requirements
+## NPM Scripts
 
-In order to follow the book's instructions you need to install _Webpack_ as a global application:
+This example (and the following) leverage a lot on [NPM Scripts](https://docs.npmjs.com/misc/scripts).  
+You can simply run `npm start` and a lot of things happens under the hood:
 
-	npm install -g webpack
-	
+- install dependencies
+- build the app
+- run a server
+- open the app in the browser
+
+Take a close look to `package.json` and it's `script` section. 
+
+> It is simple and powerful.
