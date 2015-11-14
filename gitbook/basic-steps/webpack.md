@@ -35,6 +35,8 @@ So let's start building some basic files!
 > **the following roles are the most important concepts** you must understand 
 > very deeply
 
+You can **download the complete source code** of the following example [here](./_assets/basic-steps-01.zip).
+
 ### index.html
 
 This is the **HTML entry point** of our App.
@@ -89,7 +91,7 @@ Remember those simple principles:
 * a module can export more than one method
 * a module can export every type (strings, numbers, ...)
 
-> And take a look at [the example &raquo;](./basic-steps-01)
+> **Download the complete source code** of the following example [here](./_assets/basic-steps-01.zip) and keep experimenting with it!
 
 
 	
