@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="1.3" data-chapter-title="what about CSS?" data-filepath="basic-steps/require-css.md" data-basepath=".." data-revision="Sat Nov 14 2015 10:29:02 GMT+0100 (CET)">
+    <div class="book" data-level="1.3" data-chapter-title="what about CSS?" data-filepath="basic-steps/require-css.md" data-basepath=".." data-revision="Sat Nov 14 2015 11:06:17 GMT+0100 (CET)">
     
 
 <div class="book-summary">
@@ -433,13 +433,13 @@ before the first rendering loop. So you want that <em>CSS</em> file to be linked
 within the head of the document, while the app&apos;s bundle is usually linked 
 in the body so to do not affect the <strong>first page rendering time</strong>.</p>
 </blockquote>
-<p>On the other side, <strong>under active development</strong>, you may find convenient to build one single <code>bundle</code> which contains everything is needed to run the app.</p>
+<p>On the other side, <strong>under active development</strong>, you may find convenient to build one single <code>application bundle</code> which contains everything is needed to run the app.</p>
 <p>With <em>Webpack</em> you can easily enjoy the best of the two worlds:</p>
 <ol>
-<li>you&apos;ll embed all our CSS within the bundle during development so to enjoy features like hot code loading</li>
+<li>you&apos;ll embed all our CSS within the bundle during development so to enjoy features like <em>hot module replacement</em></li>
 <li>when it&apos;s time to deploy you&apos;ll extract CSS rules in an optimized CSS bundle</li>
 </ol>
-<p>In order to do so we need to give some more fine grained instructions to <em>Webpack</em>.<br>Meet the classic <em>Webpack</em>&apos;s configuration file <code>webpack.config.js</code>.</p>
+<p>In order to do so we need to give some more fine grained instructions to <em>Webpack</em>.<br>Doing that with the classic <code>cli</code> interface is messy so meet <em>Webpack</em>&apos;s configuration file: <code>webpack.config.js</code>.</p>
 <h2 id="webpack-config-file">Webpack Config File</h2>
 <p>Create an empty file in the <em>root</em> of your app and name it <code>webpack.config.js</code>.</p>
 <pre><code>// webpack.config.js
@@ -482,7 +482,7 @@ chained</strong> one into another!</p>
 <li>the linking order matters as rules priority</li>
 </ul>
 <blockquote>
-<p>And take a look at <a href="basic-steps-02">the example &#xBB;</a></p>
+<p>And take a look at <a href="_assets/basic-steps-02.zip">the example &#xBB;</a></p>
 </blockquote>
 
                     
