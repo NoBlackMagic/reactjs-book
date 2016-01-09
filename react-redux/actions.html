@@ -5,10 +5,10 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Basic Steps | ReactJS - fast &amp; right</title>
+        <title>actions | ReactJS - fast &amp; right</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.5.2">
+        <meta name="generator" content="GitBook 2.6.6">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../basic-steps/setup.html" />
+    <link rel="next" href="../react-redux/services.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../react-redux/state.html" />
     
 
         
@@ -48,7 +48,13 @@
     <body>
         
         
-    <div class="book" data-level="1" data-chapter-title="Basic Steps" data-filepath="basic-steps/README.md" data-basepath=".." data-revision="Sat Nov 14 2015 11:06:17 GMT+0100 (CET)">
+    <div class="book"
+        data-level="4.2"
+        data-chapter-title="actions"
+        data-filepath="react-redux/actions.md"
+        data-basepath=".."
+        data-revision="Sat Jan 09 2016 15:44:30 GMT+0100 (CET)"
+        data-innerlanguage="">
     
 
 <div class="book-summary">
@@ -76,17 +82,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1" data-path="basic-steps/index.html">
+        <li class="chapter " data-level="1" data-path="basic-steps/index.html">
             
-                
-                    <a href="../basic-steps/index.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.</b>
-                        
-                        Basic Steps
-                    </a>
+            <span><b>1.</b> Basic Steps</span>
             
             
             <ul class="articles">
@@ -261,23 +259,61 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="4.1" data-path="react-redux/actions.html">
+        <li class="chapter " data-level="4.1" data-path="react-redux/state.html">
             
-            <span><b>4.1.</b> actions &amp; services</span>
+                
+                    <a href="../react-redux/state.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        app&#39; state
+                    </a>
             
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="react-redux/store.html">
+        <li class="chapter active" data-level="4.2" data-path="react-redux/actions.html">
             
-            <span><b>4.2.</b> app&#39; state</span>
+                
+                    <a href="../react-redux/actions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        actions
+                    </a>
             
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="react-redux/smart-components.html">
+        <li class="chapter " data-level="4.3" data-path="react-redux/reducers.html">
             
-            <span><b>4.3.</b> smart components</span>
+            <span><b>4.3.</b> reducers</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="react-redux/services.html">
+            
+                
+                    <a href="../react-redux/services.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        services
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="react-redux/smart-components.html">
+            
+            <span><b>4.5.</b> smart components</span>
             
             
         </li>
@@ -424,12 +460,10 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="basic-steps">Basic Steps</h1>
-<ul>
-<li><a href="basic-steps/setup.md">get your computer ready</a></li>
-<li><a href="basic-steps/webpack.md">get your hands on Webpack</a></li>
-<li><a href="basic-steps/hello-world.md">yes, we&apos;ss run an Hello World</a></li>
-</ul>
+                        <h1 id="redux-actions">Redux Actions</h1>
+<blockquote>
+<p><strong>Actions</strong> are the vehicle to mutate the <a href="state.html">_Application&apos;s State</a>.</p>
+</blockquote>
 
                     
                     </section>
@@ -440,10 +474,10 @@
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../react-redux/state.html" class="navigation navigation-prev " aria-label="Previous page: app&#39; state"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../basic-steps/setup.html" class="navigation navigation-next " aria-label="Next page: get your computer ready"><i class="fa fa-angle-right"></i></a>
+        <a href="../react-redux/services.html" class="navigation navigation-next " aria-label="Next page: services"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
@@ -469,7 +503,7 @@
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>
