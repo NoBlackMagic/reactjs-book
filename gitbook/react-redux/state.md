@@ -90,7 +90,7 @@ In our eBook example we can write tests to answer some basic questions:
   <small>(probably due to a corrupted download)</small>
 - what happen if I click on "download books" but there is no connection?
 
-## What do we keep into the _State_?
+## What do I keep into the _State_?
 
 In our example we are mixin into one single _JSON_ objects the books database, informations about the book that we are reading but even scroll position and connection availability.
 
@@ -119,13 +119,23 @@ There is no strict rule to tell what should or should not be kept into the _Appl
 Because we binded the _State_ to the device's screen it is straightforward to understand that for each change in what we see there must be a change in the _State_'s informations.
 
 > In our eBook example if I use my finger to scroll the page I understand that 
-> the `currentView.scrollPosition` has changed value.
+> the `currentView.scrollPosition` value in my app's _State_ had changed value.
 
 _(By the way during a scrolling action the _State_ will mutate an good deal of times because scrolling is almost a continuous action.)_
 
+We can do one step further and understand how things work in a real _React/Redux_ application. A user action - like scrolling the page - will cause the _State_ to mutate (we'll see how in the [actions](./actions.md) chapter) and each time the _State_ mutate _React_ will re-render the whole application applying the new _State_ to it.
 
+	InitialState
+	 -> render()
+	  -> IO Event
+	   -> StateMutate
+	    -> render()
+	     -> IO Event()
+	      -> ...
 
+`IO Event` means both UI actions like clicking a button as well as the outcome of an _HTTP Request_ or a _callback_ firing from a _WebSocket_ subscription.
 
+Whathever _Input/Output_ activity will produce some values to change in the _Application's State_. How this to happes is domain of [_Redux Actions_](./actions.md).
 
 
 
