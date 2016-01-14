@@ -1,0 +1,14 @@
+{
+  "name": "reactjs-book",
+  "version": "1.0.0",
+  "description": "React Fast & Right",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marco Pegoraro",
+  "license": "ISC",
+  "dependencies": {
+    "gitbook-plugin-ga": "^1.0.1"
+  }
+}
