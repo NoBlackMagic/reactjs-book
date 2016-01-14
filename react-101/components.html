@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>actions | ReactJS - fast &amp; right</title>
+        <title>UI as composition of components | ReactJS - fast &amp; right</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../react-redux/services.html" />
+    <link rel="next" href="../react-redux/state.html" />
     
     
-    <link rel="prev" href="../react-redux/state.html" />
+    <link rel="prev" href="../basic-steps/require-assets.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="4.2"
-        data-chapter-title="actions"
-        data-filepath="react-redux/actions.md"
+        data-level="3.1"
+        data-chapter-title="UI as composition of components"
+        data-filepath="react-101/components.md"
         data-basepath=".."
         data-revision="Thu Jan 14 2016 19:37:29 GMT+0100 (CET)"
         data-innerlanguage="">
@@ -211,7 +211,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.1" data-path="react-101/components.html">
+        <li class="chapter active" data-level="3.1" data-path="react-101/components.html">
             
                 
                     <a href="../react-101/components.html">
@@ -275,7 +275,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="4.2" data-path="react-redux/actions.html">
+        <li class="chapter " data-level="4.2" data-path="react-redux/actions.html">
             
                 
                     <a href="../react-redux/actions.html">
@@ -461,10 +461,115 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="redux-actions">Redux Actions</h1>
+                        <h1 id="ui-as-composition-of-components">UI as composition of Components</h1>
+<p>When it comes to <em>React</em> every piece of the <em>UI</em> is just a <em>Component</em> and a complex <em>UI</em> is achieved as composition of <strong>simple components</strong>.</p>
 <blockquote>
-<p><strong>Actions</strong> are the vehicle to mutate the <a href="state.html"><em>Application&apos;s State</em></a>.</p>
+<p>A <em>Component</em> is simple when it solves one single purpose and 
+<strong>delegates to sub components</strong> more sophisticated responsabilities.</p>
+<p>A <em>TodoList</em> component has the responsability of displayng a list of <em>TaskItem</em> components.
+It should know how to filter and sort the list but then she it delegates to the 
+<em>TaskItem</em> component the responsability of rendering the todo item with text, checkbox
+and user interaction handlers.</p>
 </blockquote>
+<p>It is best to write a single component per Javascript module:</p>
+<pre><code>// TaskItem.js
+import React from &apos;react&apos;;
+
+export class TaskItem extends React.Component {
+  render() {
+      return (
+      &lt;li&gt;
+          &lt;input type=&quot;checkbox&quot; checked={this.props.isDone} /&gt;
+        {this.props.title}
+      &lt;/li&gt;
+      );
+  }
+}
+</code></pre><p>The code above defines a <em>TaskItem</em> component which responsability is to describe how a todo item shoud look like. Even in this simple component we are already delegating sub-responsabilities to sub-components such <code>&lt;li&gt;</code> and <code>&lt;input&gt;</code>.</p>
+<blockquote>
+<p>Those components are called <strong><em>Leaf Components</em></strong> and are provided by <code>ReactDOM</code> 
+in order to produce <em>Web Applications</em> based on <em>HTML</em>. </p>
+<p>You can use different sets of <em>Leaf Components</em> that enable you to build <em>Canvas</em> based
+games, or even native apps in both <em>iOS</em> and <em>Android</em> with <em>React Native</em>.</p>
+</blockquote>
+<p>Now we proceed and build the <em>TodoList</em> component which will use <em>TaskItem</em> as sub-component:</p>
+<pre><code>// TodoList.js
+import React from &apos;react&apos;;
+import { TodoList } from &apos;./TaskItem&apos;;
+
+export class TaskItem extends React.Component {
+
+  propTypes = {
+    title: React.PropTypes.string,
+    items: React.PropTypes.array,
+  }
+
+  defaultProps = {
+    title: &apos;&apos;,
+    items: [],
+  }
+
+  render() {
+    var { title, items } = this.props;
+
+    items = this.props.items.map(item =&gt; (
+      &lt;TaskItem {...item} key={item.id} /&gt;
+    ));
+
+    return (
+      &lt;div&gt;
+        &lt;h3&gt;{title}&lt;/h3&gt;
+        &lt;ul&gt;{items}&lt;/ul&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre><p>This new component is a bit more complete. We introduced here the <code>propTypes</code> and <code>defaultProps</code> properties of a <em>React Component</em>.</p>
+<p>Let&apos;s step back a minute and focus on the real purpose of a <em>React Component</em>:</p>
+<blockquote>
+<p>The purpose of a <em>React Component</em> is to use some <strong>given informations</strong> to produce a
+description of how to arrange a set of sub-components.</p>
+</blockquote>
+<p>We&apos;ve already seen the <code>render()</code> method that return the sub-components composition, the other piece of the above description regards <em>given informations</em> which are the same concept as <em>HTML Tag parameters</em>.</p>
+<p>On a higher level of the <em>TodoApp</em> composition of components I may have something like:</p>
+<pre><code>// prepare data to render:
+var items = [
+  { title: &apos;buy milk&apos;, done: false },
+  { title: &apos;do landry&apos;, done: true },
+];
+
+// render into the page:
+ReactDOM.render(
+  &lt;TodoList
+    title=&quot;Personal Stuff&quot;
+    items={items} /&gt;, 
+  document.body
+);
+</code></pre><p>At this point it appears that each component&apos;s <code>this.props</code> is beign poupulated by the <em>Parent Component</em>; <code>defaultProps</code> is just a utility that assigns some default values in case nothing was specified for a given parameter; and <code>propTypes</code> is a <strong>development utility</strong> that will trigger some <code>console.error</code> when a wrong data type is passed down to a <em>Component</em>&apos;s property.</p>
+<blockquote>
+<p>A <em>Component</em>&apos;s property value is received from the <em>Parent Component</em>.<br>Whenever this value change the <em>Component</em> will <code>render()</code> again updating the <em>UI</em>.</p>
+</blockquote>
+<p>Thanks to <em>React&apos;s Virtual DOM</em> it is cheap to re-render components because only the minimum amount of <em>DOM Nodes</em> will be updated. Even very complex components hierarchies achieve top rendering performances and, in my experience, if you focus on the <strong><em>single responsability principle</em> for each component</strong> you will never get into troubles.</p>
+<h2 id="lists-and-spread-operator">Lists and Spread Operator</h2>
+<p>There is a particular piece of code that deserves a deeper explanation:</p>
+<pre><code>items = this.props.items.map(item =&gt; (
+  &lt;TaskItem {...item} key={item.id} /&gt;
+));
+</code></pre><p><code>this.props.items</code> receives a list of todo items which are <em>Javascript Objects</em> that define a todo information:</p>
+<pre><code>{
+  title: &apos;buy milk&apos;,
+  done: false,
+}
+</code></pre><p>With the <code>map()</code> operator we want to transform each <em>Todo Data Object</em> into a <em>TaskItem Component</em> which will actually render the UI for each todo.</p>
+<p>We know that <em>TaskItem</em> expects ro receive a <code>title</code> and a <code>done</code> properties in order to render itself. Here we use <em>ES6 Spread Operator</em> to fetch those informations from the iteration subject (<code>item</code>) and pass them into <em>TaskItem</em> as <em>React</em>&apos;s parameters.</p>
+<p>An equivalent but more verbose version of the same code would be:</p>
+<pre><code>items = this.props.items.map(item =&gt; (
+  &lt;TaskItem
+    title={item.title}
+    done={item.done}
+    key={item.id} /&gt;
+));
+</code></pre><p>As for the <code>key</code> parameter, this is an information that <em>React</em> need so to keep in sync a list of components and their subsequent re-rendering through time.</p>
 
                     
                     </section>
@@ -475,10 +580,10 @@
         </div>
 
         
-        <a href="../react-redux/state.html" class="navigation navigation-prev " aria-label="Previous page: app&#39; state"><i class="fa fa-angle-left"></i></a>
+        <a href="../basic-steps/require-assets.html" class="navigation navigation-prev " aria-label="Previous page: what about other assets?"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../react-redux/services.html" class="navigation navigation-next " aria-label="Next page: services"><i class="fa fa-angle-right"></i></a>
+        <a href="../react-redux/state.html" class="navigation navigation-next " aria-label="Next page: app&#39; state"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
