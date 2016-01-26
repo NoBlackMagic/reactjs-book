@@ -22,6 +22,6 @@ With _Homebrew_ installed you get your _NodeJS_ system up and running by:
 
 ## Nodeenv
 
-[_Nodeenv_](https://github.com/OiNutter/nodenv) is a NodeJS version manager. It makes very easy to run multiple versions of NodeJS on your machine. This may be very useful if you have to work on lecagy code and need to run old stuff.
+[_Nodeenv_](https://github.com/OiNutter/nodenv) is a NodeJS version manager. It makes very easy to run multiple versions of NodeJS on your machine. This may be very useful if you have to work on legacy code and need to run old stuff.
 
 
