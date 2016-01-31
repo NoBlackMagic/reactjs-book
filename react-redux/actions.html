@@ -53,7 +53,7 @@
         data-chapter-title="actions"
         data-filepath="react-redux/actions.md"
         data-basepath=".."
-        data-revision="Thu Jan 14 2016 19:45:14 GMT+0100 (CET)"
+        data-revision="Sun Jan 31 2016 14:41:20 GMT+0100 (CET)"
         data-innerlanguage="">
     
 
@@ -413,14 +413,29 @@
             
         </li>
     
-        <li class="chapter " data-level="7" data-path="vocabulary.html">
+        <li class="chapter " data-level="7" data-path="reapp/index.html">
+            
+                
+                    <a href="../reapp/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Reapp Yeoman Generator
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="vocabulary.html">
             
                 
                     <a href="../vocabulary.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>7.</b>
+                            <b>8.</b>
                         
                         Vocabulary
                     </a>
@@ -465,6 +480,54 @@
 <blockquote>
 <p><strong>Actions</strong> are the vehicle to mutate the <a href="state.html"><em>Application&apos;s State</em></a>.</p>
 </blockquote>
+<p>A <em>Redux Action</em> is a simple Javascript object which defines an <em>Action Type</em> key and some other optional informations about how to mutate the <em>State</em>:</p>
+<pre><code>{
+  type: &apos;addUser&apos;,
+  username: &apos;mpeg&apos;,
+  password: &apos;12345&apos;,
+}
+</code></pre><p>In the example above the key <code>type</code> is reseved to the <em>Redux</em> library and it will be used by our <a href="reducers.md">Application&apos;s reducers</a> to perform the mutation.</p>
+<p>You can use <code>dispatch()</code>to execute an action on a given <em>Store</em>:</p>
+<pre><code>myStore.dispatch({
+  type: &apos;addUser&apos;,
+  username: &apos;mpeg&apos;,
+  password: &apos;12345&apos;,
+});
+</code></pre><p><em>Redux</em> actions are really that simple. However we can use some more formal structure so to improve our code and avoid silly mistakes.</p>
+<h2 id="action-types-as-constants">Action Types as Constants</h2>
+<p>The <code>type</code> of an <em>Action</em> is just a string (actually it can be whatever Javascript type) but it is mandatory for the value to be unique across the whole Application so to avoid actions conflicts.</p>
+<p>A simple best practice would be to store all the <em>Action Types</em> for an App into a dictionary of constants:</p>
+<pre><code># action-types.js
+export const ADD_USER = &apos;addUser&apos;;
+export const REMOVE_USER = &apos;removeUser&apos;;
+</code></pre><p>When you want to dispatch an action you will import the <em>Action Type</em> constant and use it to create the <em>Action</em> itself:</p>
+<pre><code>import { ADD_USER } from &apos;./action-types.js&apos;
+...
+myStore.dispatch({
+  type: ADD_USER,
+  username: &apos;mpeg&apos;,
+  password: &apos;12345&apos;,
+});
+</code></pre><blockquote>
+<p>This simple gimmick is enough to avoid typos in your action types strings and
+also make it easier to guarantee that an <em>Action Type</em> is unique in the App.</p>
+</blockquote>
+<h2 id="action-creators">Action Creators</h2>
+<p>The <em>Action Type</em> as a constant is only one side of the coin. For an <em>Action</em> should always be dispatched with the same signature so to be coherent through time.</p>
+<p>Basically it is very bad to do something like this:</p>
+<pre><code>// first time:
+myStore.dispatch({
+  type: ADD_USER,
+  username: &apos;mpeg&apos;,
+  password: &apos;12345&apos;,
+});
+
+// second time
+myStore.dispatch({
+  type: ADD_USER,
+  username: &apos;mpeg&apos;,
+});
+</code></pre><p>The signature for the first action is <code>[type, username, password]</code> but the signature for the second one is <code>[type, username]</code>. Chances are that the outcome will be very different and most likely leading to errors!</p>
 
                     
                     </section>
