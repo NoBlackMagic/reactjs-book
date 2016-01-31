@@ -35,5 +35,6 @@ This is the summary of my book.
     * [target your product bundle](deploy/target.md)
     * [external dependencies](deploy/externals.md)
     * [assets-management](deploy/assets.md)
+* [Reapp Yeoman Generator](reapp/README.md)
 * [Vocabulary](vocabulary.md)
 
